@@ -1,4 +1,4 @@
-package com.reza.samplelogin
+package com.reza.samplelogin.ui.login
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,17 +9,12 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.reza.samplelogin.databinding.FragmentLoginBinding
-import com.reza.samplelogin.databinding.FragmentSplashBinding
-import androidx.core.app.ActivityCompat.startActivityForResult
 
 import android.content.Intent
 import android.widget.Toast
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.tasks.Task
 import com.google.android.gms.common.api.ApiException
-import com.google.android.gms.auth.api.Auth
-import com.google.android.gms.common.api.ResultCallback
-import com.google.android.gms.common.api.Status
 
 
 class LoginFragment : Fragment() {

@@ -1,9 +1,10 @@
-package com.reza.samplelogin
+package com.reza.samplelogin.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
+import com.reza.samplelogin.R
 
 import com.reza.samplelogin.databinding.ActivityMainBinding
 
