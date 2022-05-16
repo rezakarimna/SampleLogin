@@ -6,11 +6,6 @@
     app:startDestination="@id/splashFragment">
 
     <fragment
-        android:id="@+id/loginFragment"
-        android:name="com.reza.samplelogin.LoginFragment"
-        tools:layout="@layout/fragment_login"
-        android:label="LoginFragment" />
-    <fragment
         android:id="@+id/splashFragment"
         android:name="com.reza.samplelogin.SplashFragment"
         android:label="fragment_splash"
@@ -19,4 +14,9 @@
             android:id="@+id/action_splashFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.reza.samplelogin.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" />
 </navigation>
