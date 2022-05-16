@@ -69,4 +69,6 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.4.1"
     //DataStore
     implementation "androidx.datastore:datastore-preferences:1.0.0"
+//login google
+    implementation 'com.google.android.gms:play-services-auth:20.2.0'
 }
