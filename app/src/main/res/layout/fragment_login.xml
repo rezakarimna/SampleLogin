@@ -55,7 +55,7 @@
             android:id="@+id/gmailEdt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text"
+            android:inputType="textEmailAddress"
             android:lines="1"
             android:maxLines="1"
             android:textColor="@color/white"
@@ -130,31 +130,31 @@
 
     <ImageView
         android:id="@+id/imgGmail"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="30dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="50dp"
         android:src="@drawable/ic_google_plus"
         app:layout_constraintRight_toRightOf="@id/txtOther"
         app:layout_constraintTop_toBottomOf="@id/txtOther" />
     <ImageView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="30dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
         android:layout_marginStart="50dp"
         android:src="@drawable/ic_sms"
         app:layout_constraintLeft_toLeftOf="@id/txtOther"
         app:layout_constraintTop_toBottomOf="@id/txtOther" />
 
     <TextView
-        android:id="@+id/txtRegister"
+        android:id="@+id/txtVersion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/white"
         android:gravity="center"
         android:textStyle="bold"
-        android:text="@string/register"
-        android:layout_marginBottom="40dp"
+        android:text="V1.0"
+        android:layout_marginBottom="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         android:textSize="18sp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

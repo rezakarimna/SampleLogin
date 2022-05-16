@@ -21,10 +21,12 @@ import com.google.android.material.snackbar.Snackbar
 import com.reza.appmovies.viewmodel.LoginViewModel
 import com.reza.samplelogin.R
 import com.reza.samplelogin.data.models.BodyRegister
+import com.reza.samplelogin.utils.StoreUserData
 import com.reza.samplelogin.utils.showInVisible
+import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
-
+@AndroidEntryPoint
 class LoginFragment : Fragment() {
     lateinit var binding: FragmentLoginBinding
     lateinit var mGoogleSignInClient: GoogleSignInClient
@@ -32,6 +34,9 @@ class LoginFragment : Fragment() {
 
     @Inject
     lateinit var bodyRegister: BodyRegister
+
+    @Inject
+    lateinit var storeUserData: StoreUserData
 
     //Other
     private val viewModel: LoginViewModel by viewModels()
@@ -59,6 +64,15 @@ class LoginFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.imgGmail.setOnClickListener {
             signIn()
+        }
+        binding.submitBtn.setOnClickListener {
+            initAndValidationField()
+            //sendData
+            viewModel.sendRegisterUser(bodyRegister)
+            //loading
+            observeLoading()
+            //save user
+            observeAndSaveUserRegister()
         }
     }
 
@@ -131,6 +145,12 @@ class LoginFragment : Fragment() {
         viewModel.registerUser.observe(viewLifecycleOwner) { response ->
             lifecycle.coroutineScope.launchWhenCreated {
                 storeUserData.saveUserToken(response.name.toString())
+                Snackbar.make(
+                    binding.submitBtn,
+                    getString(R.string.welcome),
+                    Snackbar.LENGTH_SHORT
+                )
+                    .show()
             }
         }
     }
